@@ -1,0 +1,30 @@
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Repository.deps.json
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Repository.dll
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\ref\eShopOnWeb.Repository.dll
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Repository.pdb
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.csproj.AssemblyReference.cache
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.AssemblyInfoInputs.cache
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.AssemblyInfo.cs
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.csproj.CoreCompileInputs.cache
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.dll
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\ref\eShopOnWeb.Repository.dll
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.pdb
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Model.dll
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Model.pdb
+D:\Workspace\Donet nang cao\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.csproj.CopyComplete
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Repository.deps.json
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Repository.dll
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\ref\eShopOnWeb.Repository.dll
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Repository.pdb
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Model.dll
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\bin\Debug\net5.0\eShopOnWeb.Model.pdb
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.csproj.AssemblyReference.cache
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.AssemblyInfoInputs.cache
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.AssemblyInfo.cs
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.csproj.CoreCompileInputs.cache
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.csproj.CopyComplete
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.dll
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\ref\eShopOnWeb.Repository.dll
+D:\Workspace\C#\CNTT 14-05\DemoProject\eShopOnWeb.Repository\obj\Debug\net5.0\eShopOnWeb.Repository.pdb

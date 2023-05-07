@@ -1,0 +1,231 @@
+﻿@model eShopOnWeb.Model.Entities.ProductCategory;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-body">
+        <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#productCategoryModal">Thêm mới</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Tên loại sản phẩm</th>
+                    <th>Mô tả</th>
+                    <th>Thứ tự hiển thị</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="productCategoryModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm loại sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Mã sản phẩm</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Id" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Tên loại Sản phẩm</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Mô tả</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Description" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Hiển thị</label>
+                        <div class="col-sm-10">
+                            <input asp-for="DisplayOrder" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Trạng thái</legend>
+                        <div class="col-sm-10">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" asp-for="Status">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Kích hoạt
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" id="btnAdd" class="btn btn-primary" onclick="return add()">Lưu</button>
+                <button type="button" id="btnUpdate" class="btn btn-success" onclick="return update()">Cap Nhat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //load data in table when documents iss ready
+    $(document).ready(function () {
+        loadData();
+    });
+    //load data function
+    function loadData() {
+        $.ajax({
+            url: '/ProductCategory/List',
+            type: 'GET',
+            contentType: 'application/json;charset=utf-8',
+            dataType: 'JSON',
+            success: function (result) {
+                var data = '';
+                $.each(result, function (key, item) {
+                    data += '<tr>';
+                    data += '<td>' + item.id + '</td>';
+                    data += '<td>' + item.name + '</td>';
+                    data += '<td>' + item.description + '</td>';
+                    data += '<td>' + item.displayOder + '</td>';
+                    data += '<td>' + item.status + '</td>';
+                    data += '<td><a href="#" onclick = "return getById(' + item.id + ')">Sửa</a> | <a href="#" onclick = "return deleteCate(' + item.id + ')">Xóa</a></td>';
+                    data += '</tr>';
+                });
+                $('.tbody').html(data);
+            },
+            error: function (error) {
+                alert(error.responseText);
+            }
+        });
+    }
+
+    //add data function
+    function add() {
+        var status = false;
+        if ($('#Status').is(":checked")) {
+            status = true
+        }
+        var productCategory = {
+            Id: $('#Id').val(),
+            Name: $('#Name').val(),
+            Description: $('#Description').val(),
+            DisplayOder: $('#DisplayOrder').val(),
+            Status: status
+        };
+
+        $.ajax({
+            url: "/ProductCategory/Add",
+            data: JSON.stringify(productCategory),
+            type: "POST",
+            contentType: 'application/json;charset=utf-8',
+            dataType: 'JSON',
+            success: function (result) {
+                loadData();
+                $('#productCategoryModal').model('hide');
+            },
+            error: function (error) {
+                alert(error.responseText);
+            }
+        });
+    }
+
+    //get data by id function
+    //function getById(id){
+    //    $.ajax({
+    //        url: "/ProductCategory/GetById",
+    //        data: {id: id},
+    //        type: "GET",
+    //        contenType:"application/json;charset=utf-8",
+    //        success: function (result) {
+    //            $("Id").val(result.id);
+    //            $("Name").val(result.name);
+    //            $("Description").val(result.description);
+    //            $("DisplayOrder").val(result.displayOrder);
+
+    //            //Hien thi modal
+    //            $('productCategoryModal').model('show');
+    //        }
+    //    });
+    //}
+    function getById(id) {
+        $.ajax({
+            url: "/ProductCategory/GetById",
+            data: { id: id },
+            type: "GET",
+            contentType: "application/json;charset=utf-8",
+            success: function (result) {
+                $("#Id").val(result.id);
+                $("#Name").val(result.name);
+                $("#Description").val(result.description);
+                $("#DisplayOrder").val(result.displayOrder);
+                //hiển thị modal
+                $('#productCategoryModal').modal('show');
+                $('#btnAdd').hide();
+            }
+        });
+    }
+
+    function update() {
+        var status = false;
+        if ($('#Status').is(":checked")) {
+            status = true
+        }
+        //Lấy các giá trị trong textbox
+        var productCategory = {
+            Id: parseInt($("#Id")).val(),
+            Name: $("#Name").val(),
+            Description: $("Description").val(),
+            DisplayOrder: $("DisplayOrder").val(),
+            Status: status
+        };
+
+        $.ajax({
+            url: "/ProductCategory/Update",
+            data: JSON.stringify(productCategory),
+            type: "POST",
+            dataType: "JSON",
+            contentType: "application/json;charset=utf-8",
+            success: function (result) {
+                loadData();
+                //Ẩn modal
+                $('#productCategoryModal').modal('hide');
+                //reset textbox
+                $("#Id").val("");
+                $("#Name").val("");
+                $("#Description").val("");
+                $("#DisplayOrder").val("");
+            }
+        });
+    }
+    function deleteCate (id) {
+        var ans = confirm("Bạn có chắc chắn xóa không?")
+        if (ans) {
+            $.ajax({
+                url: "/ProductCategory/Delete",
+                data: { id: id },
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "JSON",
+                success: function (result) {
+                    loadData();
+                },
+                error: function (e) {
+                    alert(e.responseText);
+                }
+            });
+        }
+    }
+</script>
